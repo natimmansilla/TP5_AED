@@ -6,7 +6,7 @@ De cada Evento, se tiene:
 2. titulo = un título (una cadena corta), 
 3. descripcion = una descripción o resumen del evento (una cadena con un texto terminado en punto y con palabras separadas por un blanco (por ejemplo: “El terremoto tuvo su epicentro en San Juan y se sintió en todo el norte argentino.”), 
 4. costo = el costo de producción por su desarrollo (un valor de tipo float), 
-5. tipo = un número entre 0 y 19 que indica el tipo de evento (por ejemplo: 0: Deportivo, 2: Social, 3: Político, etc.), y 
+5. tipo_evento = un número entre 0 y 19 que indica el tipo de evento (por ejemplo: 0: Deportivo, 2: Social, 3: Político, etc.), y 
 6. segmento = otro número, pero entre 0 y 9 para indicar el segmento diario en el que se emitirá la noticicia o desarrollo para ese evento (por ejemplo: 0: matinal primera hora, 1: matinal media mañana, 2: mediodía, etc.).
 
 En base a lo anterior, desarrollar un programa completo que disponga al menos de dos módulos:

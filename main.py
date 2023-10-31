@@ -10,5 +10,12 @@ def menu():
                 "8.\n"
                 "0.Salir\n"
                 "====> Ingrese su opción: ")
-    return int(input(opcines))
+    return int(input(opciones))
 
+
+def principal():
+    pass
+
+
+if __name__ == '__main__':
+    principal()

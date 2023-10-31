@@ -12,3 +12,9 @@ def menu():
                 "====> Ingrese su opción: ")
     return int(input(opcines))
 
+
+def principal():
+    pass
+if __name__ == '__main__':
+    principal()
+

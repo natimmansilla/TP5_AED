@@ -11,10 +11,57 @@ class Evento:
         self.segmento = segmento
 
     def __str__(self):
-        return "ID: {:5} | Titulo: {:5} | Descripción: {:5} | Costo: {:5} | Tipo de Evento: {:5} |" \
-               " Segmento diario: {:5} "\
+        return "ID: {:<10} | Titulo: {:<15} | Descripción: {:<88} | Costo: $ {:<13} | Tipo de Evento: {:<4} |" \
+               " Segmento diario: {:<3} "\
             .format(self.codigo, self.titulo, self.descripcion, self.costo, self.tipo_evento, self.segmento)
+def generar_codigo():
+    letras = ("AED", "JCB", "ETC", "HID", "OPE", "YQF", "AGX", "BGH", "OPÑ")
+    codigo = random.choice(letras) + random.choice(letras) + str(random.randint(100, 999))
+    return codigo
+
+def generar_titulo():
+    secciones = ("Informativo", "Ultimo minuto", "Recordatorio", "Aviso Urgente")
+    titulos = random.choice(secciones)
+    return titulos
+
+def generar_descripcion(titulo):
+    token = random.randint(1,2)
+    if titulo == "Informativo":
+        if token == 1:
+            descripcion = "Precio de BTC cae por sobrecalentamiento de derivados de bitcoin."
+        elif token == 2:
+            descripcion = "Encontró un barco de 1886 sepultado en Tigre y hoy viaja para devolverlo a su tierra."
+
+    elif titulo == "Ultimo minuto":
+        if token == 1:
+            descripcion = "Fifa confirmó las 16 sedes que tendrá el Mundial 2026."
+        if token == 2:
+            descripcion = "El terremoto tuvo su epicentro en San Juan y se sintio en todo el norte argentino."
+
+    elif titulo == "Recordatorio":
+        if token == 1:
+            descripcion = "Ya estan abiertas las convocatorias para el financiamiento de proyectos tecnologicos."
+        elif token == 2:
+            descripcion = "Hasta el viernes 1 de diciembre podes inscribirte para el ingreso 2024 en la UTN."
+
+    elif titulo == "Aviso Urgente":
+        if token == 1:
+            descripcion = "Corte de ruta genera demoras en la Autopista Buenos Aires Rosario."
+        elif token == 2:
+            descripcion = "Por faltante de combustible, en Tartagal suspendieron el servicio de transporte."
+
+    return descripcion
+
 
 def generar_aleatorio():
-    letras = ("A","B","C","D","E"FGHIJKLMNÑOPQRSTUVWXYZ")
-    codigo = random.choice(letras)
+    codigo = generar_codigo()
+    titulo = generar_titulo()
+    descripcion = generar_descripcion(titulo)
+    costo = round(random.uniform(100000, 9999999), 2)
+    tipo_evento = random.randint(0, 19)
+    segmento = random.randint(0, 9)
+
+    evento = Evento(codigo, titulo, descripcion, costo, tipo_evento, segmento)
+
+    return evento
+

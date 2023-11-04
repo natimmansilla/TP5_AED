@@ -150,15 +150,15 @@ def cargar_matriz_conteo(mat_conteo, vec):
     mat = [[0]*10 for i in range (20)]
     for evento in vec:
         fila = evento.tipo_evento
-        colunma = evento.segmento
+        columna = evento.segmento
         mat[fila][columna] += 1
 
 
 def varlidar_rango(inferior, superior, mensaje="Ingrese un numero: "):
     numero = inferior
-    while numero <= inferior or numero >= superior:
+    while numero < inferior or numero > superior:
         numero = int(input(mensaje))
-        if numero <= inferior or numero >= superior:
+        if numero < inferior or numero > superior:
             print("ERROR! Debe ingresar un numero que sea mayor o igual que {} y menor o igual que {}."
                   .format(inferior, superior))
     return numero
@@ -169,6 +169,48 @@ def mostrar_matriz_conteo(mat_conteo, te):
             if evento.tipo_evento > te:
                 print("Para el tipo de evento {} y el segmento diario {}, los eventos son: {}"
                       .format(i, j, mat_conteo[i][j]))
+
+
+# PUNTO 8
+def calcular_cantidad_palabras(cadena):
+    # inicializador de contadores, acumuladores y banderas no reiniciables
+    cp = cp1 = 0
+
+    # inicializador de contadores, acumuladores y banderas reiniciables
+    ccp = 0
+    b_start_mayus = False
+    c_tiene_t = c_tiene_s = 0
+
+    for car in cadena:
+        if car != " " and car != ".":  # analizo caracteres
+            ccp += 1
+
+            if ccp == 1:
+                if es_mayuscula(car):
+                    b_start_mayus = True
+
+            if car.lower() == "t":
+                c_tiene_t += 1
+
+            if car.lower() == "s":
+                c_tiene_s += 1
+
+        else: # analizo palabras
+            if ccp > 0:
+                cp += 1
+                if b_start_mayus and (c_tiene_t > 0) and (c_tiene_s > 0):
+                    cp1 += 1
+
+            # reinicio de contadores, acumuladores y banderas
+            ccp = 0
+            b_start_mayus = False
+            c_tiene_t = c_tiene_s = 0
+
+    return cp1
+
+
+def es_mayuscula(c):
+    return "A" <= c <= "Z" or c == "Ñ"
 
 
 def principal():
@@ -216,7 +258,11 @@ def principal():
                 mostrar_matriz_conteo(mat_conteo, te)
 
             elif op == 8:
-                pass
+                cadena = vec[pos].descripcion
+                contador_palabras = calcular_cantidad_palabras(cadena)
+
+                print("La cantidad de palabras que empiezan con mayúscula, contienen una letra t y una letra s son {}"
+                      .format(contador_palabras))
         elif op == 0:
             print("Fin del programa! ")
         else:

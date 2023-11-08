@@ -154,7 +154,14 @@ def busqueda_binaria_x_codigo(cod, vec):
             der = c - 1
         else:
             izq = c + 1
-    return pos
+
+    if pos != -1:
+        print(vec[pos])
+        des = vec[pos].descripcion
+        return des
+    else:
+        print("El código {} no se encontró.".format(cod))
+        return "No existe."
 
 
 # PUNTO 7
@@ -239,8 +246,8 @@ def principal():
     vec = []
     op = -1
     archivo_binario = "eventos.dat"
-    b_op_6 = False
-    pos = None
+    b_pto_6 = False
+    desc = ""
 
     while op != 0:
         op = menu()
@@ -269,16 +276,10 @@ def principal():
                 mostrar_vector_costo(vec_costo)
 
             elif op == 6:
-                b_op_6 = True
+                b_pto_6 = True
                 cod = validar_codigo("Ingrese el código a buscar: ")
-                pos = busqueda_binaria_x_codigo(cod, vec)
-                if pos != -1:
-                    print(vec[pos])
-                    print()
-                    print("Descripción del evento: ", vec[pos].descripcion)
-                else:
-                    print("El código {} no se encontró.".format(cod))
-                    print("No existe..")
+                # desc contiene la cadena str del atributo descripcion o en su defecto la cadena "No existe."
+                desc = busqueda_binaria_x_codigo(cod, vec)
 
             elif op == 7:
                 mat_conteo = cargar_matriz_conteo(vec)
@@ -287,13 +288,15 @@ def principal():
                 te = varlidar_rango_int(0, 19, "Ingrese el tipo de evento mínimo: ")
                 mostrar_matriz_conteo(mat_conteo, te)
 
-            elif b_op_6:
+            elif b_pto_6:
                 if op == 8:
-                    cadena = vec[pos].descripcion
-                    contador_palabras = calcular_cantidad_palabras(cadena)
-
-                    print("La cantidad de palabras que empiezan con mayúscula, contienen una letra t y una letra s "
-                          "son {}".format(contador_palabras))
+                    if desc != "No existe.":
+                        contador_palabras = calcular_cantidad_palabras(desc)
+                        print("La cantidad de palabras que empiezan con mayúscula, contienen una letra t y una letra s "
+                              "son {}".format(contador_palabras))
+                    else:
+                        print("La descripción del evento asociada al código buscado en el punto 6 {}"
+                              " ya que el código no fue encontrado.".format(desc))
             else:
                 print("Debe cargar la descripción antes. Ingrese la opción 6.")
 

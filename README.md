@@ -27,7 +27,7 @@ A partir del arreglo, generar un archivo binario de registros que contenga los d
 ## Punto 4: Mostrar los datos del archivo binario.
 Mostrar todos los datos del archivo que generó en el punto 3, a razón de un registro por línea.
 
-## Punto 5: Generar un vector de acumulación.
+## Punto 5: Generar un vector de costos/montos.
 Recorra el archivo que generó en el punto 3, y genere a partir de él un arreglo unidimensional de valores de tipo float, que contenga en cada casilla solo el monto de producción de los eventos del archivo cuyo tipo de evento sea mayor o igual a 5. Muestre el arreglo generado de esta forma, y al final del listado agregue una línea adicional indicando el promedio de los montos mostrados.
 
 ## Punto 6: Busqueda Binaria por codigo.

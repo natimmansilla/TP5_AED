@@ -39,4 +39,4 @@ A partir del arreglo creado en el punto 1, determine cuántos eventos existen pa
 ## Punto 8: Analisis de caracteres.
 Tome la cadena retornada en el punto 6, y determine cuántas palabras de esa cadena comenzaban con una letra mayúscula y tenían al menos una "t" y una "s" (en cualquier orden y no necesariamente seguidas).  Como se dijo, la cadena debe terminar con un punto y las palabras deben separarse entre ellas con un (y solo un) espacio en blanco. La cadena debe ser procesada caracter a caracter, a razón de uno por cada vuelta del ciclo que itere sobre ella. Obviamente, el programa debe controlar que la opción 6 haya sido activada antes de ejecutar este proceso, o hacer lo que sea necesario para evitar una clavada si la opción 6 no había sido activada previamente.
 
-### Algoritmos y Estructura de Datos - Universidad Tecnológica Nacional FRC - Argentina - 2023
+#### Algoritmos y Estructura de Datos - Universidad Tecnológica Nacional FRC - Argentina - 2023

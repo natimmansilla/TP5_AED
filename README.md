@@ -16,7 +16,7 @@ En otro módulo, incluir el programa principal y las funciones generales que sea
 El programa debe basarse en un menú de opciones para desarrollar las siguientes tareas:
 
 ## Punto 1: Generar un arreglo de Objetos.
-1. Generar un arreglo de objetos que contenga los datos de todos los eventos. Debe generar obligatoriamente los datos en forma aleatoria. El arreglo debe permanecer ordenado por código de identificación en todo momento durante la carga. Debe considerar que esta opción puede ser invocada varias veces a lo largo del programa, y que en cada ejecución pueden agregarse tantos objetos como desee el operador, sin eliminar los datos que ya estaban cargados. Será considerada la eficiencia de la estrategia de carga y los algoritmos que aplique.
+Generar un arreglo de objetos que contenga los datos de todos los eventos. Debe generar obligatoriamente los datos en forma aleatoria. El arreglo debe permanecer ordenado por código de identificación en todo momento durante la carga. Debe considerar que esta opción puede ser invocada varias veces a lo largo del programa, y que en cada ejecución pueden agregarse tantos objetos como desee el operador, sin eliminar los datos que ya estaban cargados. Será considerada la eficiencia de la estrategia de carga y los algoritmos que aplique.
 
 ## Punto 2: Mostrar el arreglo.
 Mostrar el arreglo generado en el punto anterior, a razón de un registro por línea en la consola de salida.
